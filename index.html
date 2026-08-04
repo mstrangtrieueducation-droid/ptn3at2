@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#cc3475">
+    <link rel="icon" href="data:,">
+    <title>FF1 Grammar Practice</title>
+    <meta
+      name="description"
+      content="Giải thích ngữ pháp Family and Friends 1 bằng tiếng Việt và luyện nói từ gợi ý hình ảnh."
+    >
+    <link rel="stylesheet" href="styles.css?v=ff1-grammar-1">
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">FF1</span>
+          <div>
+            <p class="eyebrow">Grammar Practice</p>
+            <h1 id="unitHeading">Family and Friends 1</h1>
+          </div>
+        </div>
+      </header>
+
+      <nav class="mode-nav" aria-label="Chọn phần học">
+        <div class="mode-tabs">
+          <button class="is-active" type="button" data-view="understand">Hiểu bài</button>
+          <button type="button" data-view="practice">Luyện tập và Trả bài</button>
+        </div>
+      </nav>
+
+      <main>
+        <section class="view is-active" id="understandView">
+          <div class="section-head">
+            <p>Giải thích bằng chữ, nghe câu mẫu tiếng Anh</p>
+            <div class="step-count">
+              <b id="lessonNumber">1</b> /
+              <span id="lessonTotal">1</span>
+            </div>
+          </div>
+          <div class="progress"><span id="lessonProgress"></span></div>
+
+          <article class="lesson-stage">
+            <div class="visual-pane">
+              <img
+                id="lessonVisual"
+                src=""
+                alt="Hình minh hoạ cho câu mẫu"
+                width="900"
+                height="900"
+              >
+              <span class="visual-label" id="visualLabel"></span>
+            </div>
+            <div class="lesson-content">
+              <p class="lesson-tag" id="lessonTag"></p>
+              <h2 id="lessonTitle"></h2>
+              <p class="vietnamese-note" id="lessonNote"></p>
+              <div class="formula" id="lessonFormula"></div>
+              <p class="example-line" id="lessonExample"></p>
+
+              <div class="action-row">
+                <button class="primary-button" id="playLesson" type="button">
+                  ▶ Nghe câu mẫu tiếng Anh
+                </button>
+              </div>
+
+              <div class="lesson-nav">
+                <button class="icon-button" id="previousLesson" type="button" aria-label="Phần trước">‹</button>
+                <div class="dot-row" id="lessonDots" aria-label="Chọn phần giải thích"></div>
+                <button class="icon-button" id="nextLesson" type="button" aria-label="Phần tiếp theo">›</button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="practiceView">
+          <div class="section-head">
+            <p>Ghép chữ và hình gợi ý thành câu hoàn chỉnh</p>
+            <div class="question-count">
+              <b id="practiceNumber">0</b> /
+              <span data-practice-total></span>
+            </div>
+          </div>
+          <div class="progress"><span id="practiceProgress"></span></div>
+
+          <section class="return-intro" id="practiceIntro">
+            <div class="return-intro-image">
+              <img
+                id="introVisual"
+                src=""
+                alt="Hình từ vựng của Unit"
+                width="900"
+                height="900"
+              >
+            </div>
+            <div class="return-form">
+              <p class="lesson-tag">Cách làm bài</p>
+              <h2>Con nhìn gợi ý và tự nói</h2>
+              <p class="practice-intro-copy">
+                Con áp dụng cấu trúc ngữ pháp vừa học và từ vựng trong bài để
+                ghép chữ cùng hình gợi ý thành câu tiếng Anh hoàn chỉnh. Trước
+                khi bấm <strong>Bắt đầu</strong>, con bật quay màn hình. Ngoài
+                việc dùng đúng ngữ pháp, con nhớ
+                <strong>phát âm thật chuẩn, nói to và rõ</strong>. Nói xong mỗi
+                câu, con tự bấm <strong>Câu tiếp theo</strong>. Sau câu cuối,
+                con xem <strong>phần đáp án</strong> để tự kiểm tra.
+              </p>
+
+              <div class="practice-example" aria-label="Ví dụ cách làm">
+                <p class="example-kicker">Ví dụ minh hoạ</p>
+                <div class="cue-list" id="introExampleCues"></div>
+                <p class="example-answer">
+                  Con nói: <strong id="introExampleAnswer"></strong>
+                </p>
+              </div>
+
+              <button class="primary-button" id="startPractice" type="button">
+                Bắt đầu luyện tập và trả bài
+              </button>
+            </div>
+          </section>
+
+          <section class="return-stage" id="practiceStage" hidden>
+            <div class="return-meta">
+              <div class="question-count">
+                Câu <b id="practiceStageNumber">1</b> /
+                <span data-practice-total></span>
+              </div>
+            </div>
+            <div class="return-body">
+              <div class="return-image">
+                <img
+                  id="practiceVisual"
+                  src=""
+                  alt="Hình từ vựng gợi ý cho bài nói"
+                  width="900"
+                  height="900"
+                >
+              </div>
+              <div class="return-copy">
+                <p class="prompt-type" id="promptType"></p>
+                <h2 id="promptInstruction">Con nói một câu hoàn chỉnh</h2>
+                <div id="promptContent"></div>
+                <p class="recording-reminder">Nói to, rõ rồi mới bấm câu tiếp theo.</p>
+              </div>
+            </div>
+            <div class="return-actions">
+              <button class="secondary-button" id="previousPrompt" type="button">‹ Câu trước</button>
+              <button class="primary-button" id="nextPrompt" type="button">Câu tiếp theo ›</button>
+            </div>
+          </section>
+
+          <section class="completion answer-sheet" id="practiceComplete" hidden>
+            <div class="answer-sheet-inner">
+              <p class="lesson-tag">Đáp án</p>
+              <h2>Con kiểm tra lại nhé!</h2>
+              <p class="answer-sheet-note">
+                Con chỉ xem đáp án sau khi đã nói xong tất cả các câu.
+              </p>
+              <div id="answerGroups"></div>
+              <p class="answer-finish-note">
+                Con dừng quay màn hình và nộp video vào link cô đã gửi.
+              </p>
+              <button class="secondary-button" id="restartPractice" type="button">
+                Làm lại từ đầu
+              </button>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="unit-data.js?v=ff1-grammar-1"></script>
+    <script src="assets/audio/timings.js?v=ff1-grammar-1"></script>
+    <script src="app.js?v=ff1-grammar-1"></script>
+  </body>
+</html>
